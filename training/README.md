@@ -238,11 +238,11 @@ parserator train training/labeled.xml,training/new_addresses.xml usaddress
 After running the command, you should see output that looks something like this:
 
 ```
-renaming old model: usaddress/usaddr.crfsuite -> usaddress/usaddr_2016_12_19_21286.crfsuite
+renaming old model: usaddress/usaddr.crf -> usaddress/usaddr_2016_12_19_21286.crf
 
 training model on 1359 training examples from ['training/labeled.xml', 'trainingnew_addresses.xml']
 
-done training! model file created: usaddress/usaddr.crfsuite
+done training! model file created: usaddress/usaddr.crf
 ```
 
 This output confirms that usaddress has learned from the new training data. Nice!

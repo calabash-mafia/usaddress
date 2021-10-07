@@ -13,7 +13,7 @@ except ImportError:
     from ordereddict import OrderedDict
 import warnings
 
-import pycrfsuite
+import crfsuite
 import probableparsing
 
 # The address components are based upon the `United States Thoroughfare,
@@ -52,7 +52,7 @@ LABELS = [
 PARENT_LABEL = 'AddressString'
 GROUP_LABEL = 'AddressCollection'
 
-MODEL_FILE = 'usaddr.crfsuite'
+MODEL_FILE = 'usaddr.crf'
 MODEL_PATH = os.path.split(os.path.abspath(__file__))[0] + '/' + MODEL_FILE
 
 DIRECTIONS = set(['n', 's', 'e', 'w',
@@ -136,12 +136,16 @@ STREET_NAMES = {
 
 
 try:
-    TAGGER = pycrfsuite.Tagger()
-    TAGGER.open(MODEL_PATH)
+    MODEL = crfsuite.Model(MODEL_PATH)
+    TAGGER = crfsuite.Tagger(MODEL.model)
 except IOError:
     warnings.warn('You must train the model (parserator train --trainfile '
                   'FILES) to create the %s file before you can use the parse '
                   'and tag methods' % MODEL_FILE)
+except Exception:
+    warnings.warn('(Generic `Exception`) You must train the model (parserator '
+                  'train --trainfile FILES) to create the %s file before you '
+                  'can use the parse and tag methods' % MODEL_FILE)
 
 
 def parse(address_string):

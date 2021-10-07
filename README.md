@@ -39,7 +39,7 @@ It also does not normalize the address. However, [this library built on top of u
   ```
 
 ## How to use this development code (for the nerds)
-usaddress uses [parserator](https://github.com/datamade/parserator), a library for making and improving probabilistic parsers - specifically, parsers that use [python-crfsuite](https://github.com/tpeng/python-crfsuite)'s implementation of conditional random fields. Parserator allows you to train the usaddress parser's model (a .crfsuite settings file) on labeled training data, and provides tools for adding new labeled training data.
+usaddress uses [parserator](https://github.com/datamade/parserator), a library for making and improving probabilistic parsers - specifically, parsers that use [crfsuite](https://github.com/chokkan/crfsuite)'s implementation of conditional random fields. Parserator allows you to train the usaddress parser's model (a .crf settings file) on labeled training data, and provides tools for adding new labeled training data.
 
 ### Building & testing the code in this repo
 

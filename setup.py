@@ -13,9 +13,9 @@ setup(
     description='Parse US addresses using conditional random fields',
     name='usaddress',
     packages=['usaddress'],
-    package_data={'usaddress': ['usaddr.crfsuite']},
+    package_data={'usaddress': ['usaddr.crf']},
     license='The MIT License: http://www.opensource.org/licenses/mit-license.php',
-    install_requires=['python-crfsuite>=0.7',
+    install_requires=['crfsuite>=0.3.1',
                       'future>=0.14',
                       'probableparsing'],
     classifiers=[
