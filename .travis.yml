@@ -11,7 +11,7 @@ notifications:
 matrix:
   include:
   - os: linux
-    python: 3.4
+    python: 3.10
   - os: linux
     python: 2.7
   - os: osx
